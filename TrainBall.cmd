@@ -1,0 +1,1 @@
+mlagents-learn config/trainer_config.yaml --run-id=ball_1 --train

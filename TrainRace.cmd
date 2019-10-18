@@ -1,0 +1,1 @@
+mlagents-learn config/trainer_config.yaml --run-id=race_1 --train

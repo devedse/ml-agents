@@ -286,3 +286,69 @@ BasicLearning:
         extrinsic:
             strength: 1.0
             gamma: 0.9
+
+BallLearningBrain:
+    normalize: true
+    batch_size: 64
+    buffer_size: 12000
+    summary_freq: 1000
+    time_horizon: 1000
+    lambd: 0.99
+    beta: 0.001
+    max_steps: 5.0e6
+
+RaceGameLearningBrain:
+    time_horizon: 128
+    batch_size: 64
+    buffer_size: 2024
+    hidden_units: 512
+    num_layers: 1
+    beta: 1.0e-2
+    max_steps: 5.0e8
+    num_epoch: 3
+    reward_signals:
+        extrinsic:
+            strength: 1.0
+            gamma: 0.99
+        curiosity:
+            strength: 0.01
+            gamma: 0.99
+            encoding_size: 256
+
+HideAndSeekGameLearningBrain_Hider:
+    time_horizon: 64
+    batch_size: 2024
+    buffer_size: 20240
+    hidden_units: 256
+    num_layers: 1
+    beta: 1.0e-2
+    max_steps: 5.0e6
+    learning_rate: 1e-4
+    num_epoch: 6
+    reward_signals:
+        extrinsic:
+            strength: 1.0
+            gamma: 0.99
+        curiosity:
+            strength: 0.01
+            gamma: 0.99
+            encoding_size: 256
+
+HideAndSeekGameLearningBrain_Seeker:
+    time_horizon: 64
+    batch_size: 2024
+    buffer_size: 20240
+    hidden_units: 256
+    num_layers: 1
+    beta: 1.0e-2
+    max_steps: 5.0e6
+    learning_rate: 1e-4
+    num_epoch: 6
+    reward_signals:
+        extrinsic:
+            strength: 1.0
+            gamma: 0.99
+        curiosity:
+            strength: 0.01
+            gamma: 0.99
+            encoding_size: 256
